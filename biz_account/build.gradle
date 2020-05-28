@@ -33,6 +33,7 @@ dependencies {
 
     implementation project(':fdn_core')
     implementation project(':lib_utils')
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
