@@ -17,7 +17,6 @@ public class MailActivity extends AppCompatActivity {
     private Button btn1;
     private Button btn2;
     private Button btn3;
-    private Button btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,6 @@ public class MailActivity extends AppCompatActivity {
         btn1=findViewById(R.id.btn1);
         btn2=findViewById(R.id.btn2);
         btn3=findViewById(R.id.btn3);
-        btn4=findViewById(R.id.btn4);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,16 +51,13 @@ public class MailActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MyRouter.getInstance().navigate(MailActivity.this,RouterMap.URL_USER,100);
+//                MyRouter.getInstance().navigate(MailActivity.this,RouterMap.URL_USER);
+//                增加 with(name,param).with(key,value); 然后再做发送
+//                不做演示
             }
         });
 
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyRouter.getInstance().navigate(MailActivity.this,"no activity");
-            }
-        });
+
 
     }
 

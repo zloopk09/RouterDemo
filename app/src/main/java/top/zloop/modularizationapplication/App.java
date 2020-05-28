@@ -21,6 +21,6 @@ public class App extends Application {
     private void initialRouter() {
         MyRouter.getInstance().addPath(RouterMap.URL_MAIL, MailActivity.class);
         MyRouter.getInstance().addPath(RouterMap.URL_USER, UserActivity.class);
-        MyRouter.getInstance().addPath(RouterMap.URL_USER, LoginActivity.class);
+        MyRouter.getInstance().addPath(RouterMap.URL_Login, LoginActivity.class);
     }
 }

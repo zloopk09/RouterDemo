@@ -12,10 +12,6 @@ public class MyRouter {
 
     private MyRouter(){}
 
-    public MyRouterBuilder build() {
-        return new MyRouterBuilder();
-    }
-
     private static class Holder{
 
         private static MyRouter INSTANCE = new MyRouter();
@@ -41,11 +37,6 @@ public class MyRouter {
     }
 
     public void navigate(Activity mailActivity, String path, int requestCode) {
-        if( getTarget(path)==null ){
-            Intent intent = new Intent(mailActivity, getTarget(RouterMap.URL_Login));
-            mailActivity.startActivityForResult(intent,requestCode);
-            return;
-        }
         Intent intent = new Intent(mailActivity, getTarget(path));
         mailActivity.startActivityForResult(intent,requestCode);
     }
@@ -55,10 +46,6 @@ public class MyRouter {
         return map.get(path);
     }
 
-
-    public static final class MyRouterBuilder{
-
-    }
 
 
 }
