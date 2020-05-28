@@ -95,7 +95,7 @@ public class MailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                MyRouter.getInstance().navigate(MailActivity.this,"RouterMap.URL_Login",100);
-                ARouter.getInstance().build("RouterMap.URL_USER").navigation(MailActivity.this,100);
+                ARouter.getInstance().build("/xxx/xxxxx").navigation(MailActivity.this,100);
             }
         });
 
