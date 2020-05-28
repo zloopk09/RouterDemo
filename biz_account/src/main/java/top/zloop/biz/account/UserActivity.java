@@ -7,6 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
+import top.zloop.fdn.core.RouterMap;
+
+@Route(path= RouterMap.URL_USER)
 public class UserActivity extends AppCompatActivity {
 
     private Button btn2;

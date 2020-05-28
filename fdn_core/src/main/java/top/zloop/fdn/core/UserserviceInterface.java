@@ -1,6 +1,8 @@
 package top.zloop.fdn.core;
 
-public interface UserserviceInterface {
+import com.alibaba.android.arouter.facade.template.IProvider;
+
+public interface UserserviceInterface extends IProvider {
 
     String Hello(String name);
 }

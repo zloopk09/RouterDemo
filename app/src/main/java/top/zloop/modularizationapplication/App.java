@@ -2,12 +2,7 @@ package top.zloop.modularizationapplication;
 
 import android.app.Application;
 
-import top.zloop.biz.account.UserActivity;
-import top.zloop.biz.account.UserserviceImpl;
-import top.zloop.biz.login.LoginActivity;
-import top.zloop.biz.mail.MailActivity;
-import top.zloop.fdn.core.MyRouter;
-import top.zloop.fdn.core.RouterMap;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 public class App extends Application {
 
@@ -15,15 +10,12 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        initialRouter();
+        if (BuildConfig.DEBUG) {   // These two lines must be written before init, otherwise these configurations will be invalid in the init process
+            ARouter.openLog();     // Print log
+            ARouter.openDebug();   // Turn on debugging mode (If you are running in InstantRun mode, you must turn on debug mode! Online version needs to be closed, otherwise there is a security risk)
+        }
+        ARouter.init(this);
 
     }
 
-    private void initialRouter() {
-        MyRouter.getInstance().addPath(RouterMap.URL_MAIL, MailActivity.class);
-        MyRouter.getInstance().addPath(RouterMap.URL_USER, UserActivity.class);
-        MyRouter.getInstance().addPath(RouterMap.URL_Login, LoginActivity.class);
-
-        MyRouter.getInstance().addPath(RouterMap.URL_USER_SERVICE, UserserviceImpl.class);
-    }
 }
