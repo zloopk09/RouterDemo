@@ -7,4 +7,7 @@ public class RouterMap {
     public static final String URL_Login="activity/login";
 
 
+    public static final String URL_USER_SERVICE="method/userservice";
+
+
 }

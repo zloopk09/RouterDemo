@@ -3,6 +3,7 @@ package top.zloop.modularizationapplication;
 import android.app.Application;
 
 import top.zloop.biz.account.UserActivity;
+import top.zloop.biz.account.UserserviceImpl;
 import top.zloop.biz.login.LoginActivity;
 import top.zloop.biz.mail.MailActivity;
 import top.zloop.fdn.core.MyRouter;
@@ -22,5 +23,7 @@ public class App extends Application {
         MyRouter.getInstance().addPath(RouterMap.URL_MAIL, MailActivity.class);
         MyRouter.getInstance().addPath(RouterMap.URL_USER, UserActivity.class);
         MyRouter.getInstance().addPath(RouterMap.URL_Login, LoginActivity.class);
+
+        MyRouter.getInstance().addPath(RouterMap.URL_USER_SERVICE, UserserviceImpl.class);
     }
 }

@@ -11,12 +11,14 @@ import android.widget.Toast;
 
 import top.zloop.fdn.core.MyRouter;
 import top.zloop.fdn.core.RouterMap;
+import top.zloop.fdn.core.UserserviceInterface;
 
 public class MailActivity extends AppCompatActivity {
 
     private Button btn1;
     private Button btn2;
     private Button btn3;
+    private Button btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MailActivity extends AppCompatActivity {
         btn1=findViewById(R.id.btn1);
         btn2=findViewById(R.id.btn2);
         btn3=findViewById(R.id.btn3);
+        btn4=findViewById(R.id.btn4);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +60,19 @@ public class MailActivity extends AppCompatActivity {
             }
         });
 
-
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    UserserviceInterface userservice = (UserserviceInterface) MyRouter.getInstance().provide(MailActivity.this,RouterMap.URL_USER_SERVICE).newInstance();
+                    Toast.makeText(MailActivity.this,userservice.Hello("honglian"),Toast.LENGTH_LONG).show();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
     }
 

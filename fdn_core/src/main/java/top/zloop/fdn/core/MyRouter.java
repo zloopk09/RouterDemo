@@ -12,6 +12,10 @@ public class MyRouter {
 
     private MyRouter(){}
 
+    public void addProvider(String path, Object userserviceClass) {
+
+    }
+
     private static class Holder{
 
         private static MyRouter INSTANCE = new MyRouter();
@@ -42,10 +46,15 @@ public class MyRouter {
     }
 
 
-    private Class<?> getTarget(String path) {
+    private Class getTarget(String path) {
         return map.get(path);
     }
 
+
+    public Class provide(Context ctx,
+            String path) {
+        return getTarget(path);
+    }
 
 
 }
