@@ -41,6 +41,13 @@ public class MyRouter {
     }
 
     public void navigate(Activity mailActivity, String path, int requestCode) {
+        /////////////////
+        if( getTarget(path)==null ){
+            Intent intent = new Intent(mailActivity, getTarget(RouterMap.URL_Login));
+            mailActivity.startActivityForResult(intent,requestCode);
+            return;
+        }
+        /////////////////
         Intent intent = new Intent(mailActivity, getTarget(path));
         mailActivity.startActivityForResult(intent,requestCode);
     }

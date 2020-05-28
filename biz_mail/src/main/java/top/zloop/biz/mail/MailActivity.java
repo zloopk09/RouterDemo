@@ -19,6 +19,7 @@ public class MailActivity extends AppCompatActivity {
     private Button btn2;
     private Button btn3;
     private Button btn4;
+    private Button btn5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MailActivity extends AppCompatActivity {
         btn2=findViewById(R.id.btn2);
         btn3=findViewById(R.id.btn3);
         btn4=findViewById(R.id.btn4);
+        btn5=findViewById(R.id.btn5);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +73,13 @@ public class MailActivity extends AppCompatActivity {
                 } catch (InstantiationException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyRouter.getInstance().navigate(MailActivity.this,"RouterMap.URL_Login",100);
             }
         });
 
